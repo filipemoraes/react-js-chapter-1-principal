@@ -41,7 +41,9 @@ export function TaskList() {
   }
 
   function handleRemoveTask(id: number) {
-    // Remova uma task da listagem pelo ID
+    let cloneTasks = [...tasks].filter((task: Task) => task.id !== id);
+    
+    setTasks(cloneTasks);
   }
 
   return (
